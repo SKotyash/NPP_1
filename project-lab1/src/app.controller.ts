@@ -5,22 +5,12 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  
-
   @Get()
-  getNumbers(): number {
-    return this.appService.getNumbers();
+  getHello(): Promise<any> {
+    return this.appService.getHello();
   }
 
-  @Get()
-  getStrings(): string{
-    return this.appService.getStrings();
-  }
 
-  @Get()
-  getArrays(): number[]{
-    return this.appService.getArrays();
-  }
   
 
 }

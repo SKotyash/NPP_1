@@ -3,28 +3,31 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
 
-  getHello(): string {
-    return 'Hello World!';
+  getHello(): Promise<any> {
+    let a,b;
+    a =12342;
+    b = 20000;
+    const res = this.TwoNumber(a,b);
+    return res;
   }
 
-  getNumbers(): number {
-    const a = 90;
-    const b = 3.14;
-    const c = a + b ;
-    return c;
-  }
-  
-  getStrings(): string {
-   const name='MyName';
-   const lasName='LastName';
-   const fullName = name+'  '+lasName;
-   return fullName;
-  }
-  
-  getArrays(): number[] {
-    const list: number[] =[1,2,3]
-    return list;
+  public async TwoNumber(a:number,b:number):Promise<any>{
+     let one:string = "Число" + ".\n\n" + a + ".\n\n" + "більше ніж" + ".\n\n" + b;
+     let two:string = "Число" + ".\n\n" + b + ".\n\n" + "більше ніж" + ".\n\n" + a;
+
+     if (a > b) {
+       return one; 
+     }
+     else{
+      return two;
+     }
+
 
   }
+
+
+
+  
+ 
 
 }
